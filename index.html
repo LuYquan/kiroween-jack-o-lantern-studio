@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>🎃 Jack-o'-Lantern Studio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>🎃 Jack-o'-Lantern Studio</h1>
+    <div class="header-controls">
+      <button id="night-toggle" title="Toggle day / night">🌙 Night</button>
+      <button id="export-btn" title="Download PNG">📥 Export PNG</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Canvas column -->
+    <section class="canvas-col">
+      <div class="canvas-wrap">
+        <canvas id="main-canvas" width="500" height="500">
+          Your browser does not support canvas.
+        </canvas>
+        <p id="fallback" hidden>Your browser does not support canvas. Please try a modern browser.</p>
+      </div>
+      <p id="hint">Click a tool, then click the pumpkin to carve</p>
+
+      <!-- Gallery strip -->
+      <div id="gallery">
+        <span class="gallery-label">Presets</span>
+        <div class="gallery-thumbs">
+          <div class="thumb-wrap">
+            <canvas class="thumb" data-preset="classic" width="90" height="90" title="Classic"></canvas>
+            <span>Classic</span>
+          </div>
+          <div class="thumb-wrap">
+            <canvas class="thumb" data-preset="spooky" width="90" height="90" title="Spooky"></canvas>
+            <span>Spooky</span>
+          </div>
+          <div class="thumb-wrap">
+            <canvas class="thumb" data-preset="silly" width="90" height="90" title="Silly"></canvas>
+            <span>Silly</span>
+          </div>
+          <div class="thumb-wrap">
+            <canvas class="thumb" data-preset="wicked" width="90" height="90" title="Wicked"></canvas>
+            <span>Wicked</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controls column -->
+    <aside class="controls-col">
+
+      <!-- Tool palette -->
+      <section class="panel" id="tools-panel">
+        <h2>Carving Tools</h2>
+        <nav id="tools">
+          <button class="tool-btn" data-tool="stamp:triangle-eyes">△ Triangle Eyes</button>
+          <button class="tool-btn" data-tool="stamp:round-eyes">○ Round Eyes</button>
+          <button class="tool-btn" data-tool="stamp:crooked-eyes">◇ Crooked Eyes</button>
+          <button class="tool-btn" data-tool="stamp:nose">▽ Nose</button>
+          <button class="tool-btn" data-tool="stamp:classic-grin">⌣ Classic Grin</button>
+          <button class="tool-btn" data-tool="stamp:toothy-grin">⌣ Toothy Grin</button>
+          <button class="tool-btn" data-tool="stamp:frown">⌢ Frown</button>
+          <button class="tool-btn" data-tool="stamp:star">★ Star</button>
+          <button class="tool-btn" data-tool="stamp:crescent-moon">☽ Crescent Moon</button>
+          <button class="tool-btn" data-tool="freehand">✏ Freehand Carve</button>
+          <button class="tool-btn" data-tool="erase">⌫ Erase</button>
+        </nav>
+      </section>
+
+      <!-- Preset actions -->
+      <section class="panel" id="presets-panel">
+        <h2>Quick Faces</h2>
+        <div id="presets">
+          <button class="preset-btn" data-preset="classic">Classic</button>
+          <button class="preset-btn" data-preset="spooky">Spooky</button>
+          <button class="preset-btn" data-preset="silly">Silly</button>
+          <button class="preset-btn" data-preset="wicked">Wicked</button>
+        </div>
+        <button id="haunt-btn">👻 Haunt me</button>
+      </section>
+
+      <!-- Glow colour picker -->
+      <section class="panel" id="glow-panel">
+        <h2>Glow Colour</h2>
+        <div id="glow-picker">
+          <button class="swatch active" data-colour="orange"  style="--swatch:#FF6B00" title="Orange">Orange</button>
+          <button class="swatch"        data-colour="green"   style="--swatch:#00FF44" title="Green">Green</button>
+          <button class="swatch"        data-colour="purple"  style="--swatch:#BB00FF" title="Purple">Purple</button>
+          <button class="swatch"        data-colour="blood-red" style="--swatch:#CC0022" title="Blood Red">Blood Red</button>
+        </div>
+      </section>
+
+    </aside>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
